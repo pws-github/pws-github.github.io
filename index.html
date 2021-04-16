@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href=style.css>
+<title>Balls in a box</title>
+<h1>Balls in a box</h1>
+</head>
+
+<body>
+<div class="row">
+<div class="column" style="background-color:#fff; border:1px solid #d3d3d3;">
+<canvas id="myCanvas" width="400" height="400" style="border:5px solid #d3d3d3;">
+Your browser does not support the HTML canvas tag.</canvas>
+<script src="draw.js"></script>
+</div>
+<div class="column" style="border:1px solid #d3d3d3;">
+<p><button onclick="reset()">Random</button></p>
+<p id="recoveryTime">Recovery time: <script>document.write(recoveryTime/60)</script> s</p>
+<p>
+    <button onclick="recoveryTimeIncrease()">Increase</button>
+    <button onclick="recoveryTimeDecrease()">Decrease</button>
+</p>
+<p id="nBalls">Number of balls: <script>document.write(nBalls)</script></p>
+<p>
+    <button onclick="nBallsIncrease()">Increase</button>
+    <button onclick="nBallsDecrease()">Decrease</button>
+</p>
+<p>Tip: After changing parameters click "Random" to generate a new configuration.</p>
+</div>
+</div>
+</body>
+</html>
+
