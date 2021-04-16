@@ -188,14 +188,20 @@ function nBallsDecrease() {
                                                         nBalls;
 }
 
+function bounceFromBallsOn() {
+    bounceFromBalls = Boolean((bounceFromBalls + 1) % 2);
+    document.getElementById("bounceFromBalls").innerHTML = "Bounce from balls: "
+    + bounceFromBalls;
+}
+
 time = new Date();
 start = time.getTime();
 nBalls = 10;
+bounceFromBalls = false;
 do {
     balls = randomConfig(nBalls);
     console.log("Balls!");
 } while (ballsOverlap(balls));
 recoveryTime = 60*5;
-bounceFromBalls = true;
 window.requestAnimationFrame(draw);
 
