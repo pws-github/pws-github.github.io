@@ -147,6 +147,20 @@ function draw() {
                 if (bounceFromBalls) {
                     balls[i].setVelocity(nvx1, nvy1);
                     balls[j].setVelocity(nvx2, nvy2);
+
+                    // Move balls a litte after the collision,
+                    // so they are not overlapping
+                    let nv1Norm = Math.sqrt(nvx1**2+nvy1**2);
+                    let nv2Norm = Math.sqrt(nvx2**2+nvy2**2);
+                    balls[i].x += nvx1/nv1Norm *
+                                 0.5*(balls[i].r + balls[j].r - dist);
+                    balls[i].y += nvy1/nv1Norm *
+                                 0.5*(balls[i].r + balls[j].r - dist);
+
+                    balls[j].x += nvx2/nv2Norm *
+                                 0.5*(balls[i].r + balls[j].r - dist);
+                    balls[j].y += nvy2/nv2Norm *
+                                 0.5*(balls[i].r + balls[j].r - dist);
                 }
             }
         }
