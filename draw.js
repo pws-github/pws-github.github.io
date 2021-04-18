@@ -132,19 +132,19 @@ function draw() {
                 if (balls[i].color == 1 && balls[j].color == 0) {
                     balls[j].color = 1;
                 }
-                let nvx1 = vx1 - 2*m2/(m1+m2)*((vx1-vx2)*(x1-x2)+
-                                               (vy1-vy2)*(y1-y2))/
-                                              dist**2 * (x1-x2);
-                let nvy1 = vy1 - 2*m2/(m1+m2)*((vx1-vx2)*(x1-x2)+
-                                               (vy1-vy2)*(y1-y2))/
-                                              dist**2 * (y1-y2);
-                let nvx2 = vx2 - 2*m1/(m1+m2)*((vx2-vx1)*(x2-x1)+
-                                               (vy2-vy1)*(y2-y1))/
-                                              dist**2 * (x2-x1);
-                let nvy2 = vy2 - 2*m1/(m1+m2)*((vx2-vx1)*(x2-x1)+
-                                               (vy2-vy1)*(y2-y1))/
-                                              dist**2 * (y2-y1);
                 if (bounceFromBalls) {
+                    let nvx1 = vx1 - 2*m2/(m1+m2)*((vx1-vx2)*(x1-x2)+
+                                                (vy1-vy2)*(y1-y2))/
+                                                dist**2 * (x1-x2);
+                    let nvy1 = vy1 - 2*m2/(m1+m2)*((vx1-vx2)*(x1-x2)+
+                                                (vy1-vy2)*(y1-y2))/
+                                                dist**2 * (y1-y2);
+                    let nvx2 = vx2 - 2*m1/(m1+m2)*((vx2-vx1)*(x2-x1)+
+                                                (vy2-vy1)*(y2-y1))/
+                                                dist**2 * (x2-x1);
+                    let nvy2 = vy2 - 2*m1/(m1+m2)*((vx2-vx1)*(x2-x1)+
+                                                (vy2-vy1)*(y2-y1))/
+                                                dist**2 * (y2-y1);
                     balls[i].setVelocity(nvx1, nvy1);
                     balls[j].setVelocity(nvx2, nvy2);
 
